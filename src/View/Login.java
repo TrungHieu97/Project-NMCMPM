@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -13,6 +13,8 @@ import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.DropMode;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.GridLayout;
@@ -29,15 +31,15 @@ import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 import javax.swing.ImageIcon;
 
-public class Login extends JFrame {
+public class Login extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
+	
+	private JButton btnLogin;
+	private JLabel LbLogin;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -71,10 +73,11 @@ public class Login extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\u0110\u0102NG NH\u1EACP T\u00C0I KHO\u1EA2N");
-		lblNewLabel.setBounds(181, 14, 293, 90);
-		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 22));
-		panel.add(lblNewLabel);
+	    LbLogin = new JLabel("LOGIN");
+		LbLogin.setHorizontalAlignment(SwingConstants.CENTER);
+		LbLogin.setBounds(181, 14, 293, 90);
+		LbLogin.setFont(new Font("Times New Roman", Font.BOLD, 22));
+		panel.add(LbLogin);
 		
 		textField = new JTextField();
 		textField.setFont(new Font("Times New Roman", Font.PLAIN, 19));
@@ -83,30 +86,36 @@ public class Login extends JFrame {
 		textField.setColumns(10);
 		
 		JLabel lblName = new JLabel("NAME :");
-		lblName.setIcon(new ImageIcon("D:\\SourceCode\\JavaSwingApplet\\user1.png"));
+		lblName.setIcon(new ImageIcon("user1.png"));
 		lblName.setFont(new Font("Times New Roman", Font.BOLD, 19));
 		lblName.setBounds(45, 122, 174, 42);
 		panel.add(lblName);
 		
 		JLabel lblPassword = new JLabel("PASSWORD :");
-		lblPassword.setIcon(new ImageIcon("D:\\SourceCode\\JavaSwingApplet\\pass.png"));
+		lblPassword.setIcon(new ImageIcon("pass.png"));
 		lblPassword.setFont(new Font("Times New Roman", Font.BOLD, 19));
 		lblPassword.setBounds(45, 208, 161, 31);
 		panel.add(lblPassword);
 		
-		JButton btnNewButton = new JButton("\u0110\u0103ng nh\u1EADp");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnNewButton.setBackground(SystemColor.inactiveCaption);
-		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 19));
-		btnNewButton.setBounds(245, 281, 115, 29);
-		panel.add(btnNewButton);
+		btnLogin = new JButton("Login");
+		btnLogin.addActionListener(this);
+		btnLogin.setBackground(SystemColor.inactiveCaption);
+		btnLogin.setFont(new Font("Times New Roman", Font.PLAIN, 19));
+		btnLogin.setBounds(245, 281, 115, 29);
+		panel.add(btnLogin);
 		
 		passwordField = new JPasswordField();
 		passwordField.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		passwordField.setBounds(234, 203, 220, 42);
 		panel.add(passwordField);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		JButton item = (JButton) e.getSource();
+		if(item == btnLogin){
+			JOptionPane.showConfirmDialog(null, "Are you ready", "Bat dau",JOptionPane.YES_NO_OPTION );
+		}
+		
 	}
 }

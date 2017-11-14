@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -116,14 +116,14 @@ public class Running extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnSubmit.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnSubmit.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnSubmit.setForeground(Color.BLACK);
 		btnSubmit.setBackground(new Color(238, 232, 170));
 		btnSubmit.setBounds(712, 216, 131, 67);
 		contentPane.add(btnSubmit);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("D:\\SourceCode\\JavaSwingApplet\\clock.png"));
+		lblNewLabel_1.setIcon(new ImageIcon("clock.png"));
 		lblNewLabel_1.setBounds(72, 120, 70, 67);
 		contentPane.add(lblNewLabel_1);
 		
@@ -148,7 +148,7 @@ public class Running extends JFrame {
 		JLabel label = new JLabel("New label");
 		label.setBounds(0, 0, 873, 619);
 		contentPane.add(label);
-		label.setIcon(new ImageIcon("D:\\SourceCode\\JavaSwingApplet\\A2.jpg"));
+		label.setIcon(new ImageIcon("A2.jpg"));
 		
 		
 		
